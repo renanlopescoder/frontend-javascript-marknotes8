@@ -1,0 +1,124 @@
+.card{
+  font-size: 1.1em;
+  padding: 16px;
+  display: inline-block;
+  width: 24%;
+  box-sizing: border-box;
+  height: 318px;
+  position: relative;;
+  border-radius: 5% 12%;
+  margin: .5%;
+  overflow: hidden;
+  transition: .5s;
+}
+
+/*Código HTML
+  <p class="card-content" contenteditable="true">*/
+
+.card-content[contenteditable="true"]{
+  outline: 2px dashed rgba(0,0,0, 0.2);
+  height: 255px;
+  max-height: 255px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+/*Alterando a barra de rolagem do padrão no chrome
+  no cartão*/
+
+.card-content::-webkit-scrollbar-track {
+  background-color: rgba(0,0,0, 0.0);
+  border-radius: 10px;
+}
+.card-content::-webkit-scrollbar {
+    width: 6px;
+}
+.card-content::-webkit-scrollbar-thumb {
+  background: rgba(0,0,80,0.7);
+  border-radius: 15px;
+}
+
+/*Usando pseudo-parametro se caso a edição do cartão
+  estiver inativa */
+/*Código HTML
+  <p class="card-content" contenteditable="false">*/
+.card-content[contenteditable="false"]{
+  overflow-y: hidden;
+  overflow-x: hidden;
+  max-height: 255px;
+}
+.card-content{
+  margin-top: 8px;
+}
+.wrap-card-options{
+  position: absolute;
+  top: 5px;
+  left:0px;
+  opacity:0;
+  transition: margin-left 0.2s linear,opacity 0.2s linear;
+}
+
+.card:hover .wrap-card-options{
+  opacity:1;
+  margin-left: 20px;
+}
+
+.card:hover{
+  padding: 40px 16px 16px 16px;
+}
+
+/*Colocando no hover do cartão a barra de rolagem*/
+
+.card:hover .card-content{
+  overflow-y: scroll;
+}
+
+.card-options{
+  width: 30px;
+  height: 30px;
+  text-indent: -9999px;
+  overflow: hidden;
+  border-radius: 50%;
+  display:inline-block;
+  border: 1.5px solid rgba(0,0,0, 0.5);
+  box-sizing: border-box;
+  background-position:center;
+  background-repeat: no-repeat;
+  background-size: 50px;
+  cursor: pointer;
+}
+.card-options.isActive{
+  border: 3px solid rgba(0,0,0, 0.3);
+}
+.card_delete{
+  background-image: url(../../images/icon-delete.png);
+  border: 1.5px solid rgba(0,0,0, 0.3);
+  margin-right: 20px;
+}
+.card_edit{
+  width: 32px;
+  height: 32px;
+  background-image: url(../../images/editF.png);
+  border: 1.5px solid rgba(0,0,0, 0.3);
+  border-radius: 20%;
+}
+
+.card-options.edit{
+  width: 40px;
+  height: 40px;
+}
+
+/*Código HTML <li class="card-options" data-color="first"><a href="">Amarelo</a></li>*/
+
+[data-color="first"]{
+  background-color: rgba(255,255,120,.9); /* Amarelo */
+}
+[data-color="second"]{
+  background-color: rgba(255,120,120,.9); /* Vermelho */
+}
+[data-color="third"]{
+  background-color: rgba(120,255,120,.9); /* Verde */
+}
+[data-color="fourth"]{
+  background-color: rgba(120,230,255,.9); /* Azul */
+}

@@ -1,0 +1,38 @@
+.newCard{
+  background-color: rgba(255,255,255,0.05);
+  padding: 24px 127px;
+  margin-bottom: 40px;
+}
+
+.newCard-content{
+  background-color: rgba(255,255,255, 0.1);
+  color: rgba(255,255,255,0.9);
+  border-radius: 10px;
+  font-size: 1em;
+  width: 560px;
+  height: 40px;
+  padding: 0.5em;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  transition: height 0.5s linear,
+              outline 0.5s linear;
+  outline: 4px solid rgba(0,0,0, 0.4);
+}
+
+.newCard-content/*:hover,*/:focus{
+  height: 100px;
+  outline: 4px solid rgba(0,0,0, 0.5);
+  border-radius: 10px;
+}
+.newCard_action{
+  margin-top: 20px;
+  font-size:16px;
+  width: 84px;
+  height: 34px;
+  background-color: #FFF;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  cursor:pointer
+}
